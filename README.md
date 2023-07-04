@@ -114,3 +114,19 @@ function combine(inp1: string | number, inp2: string | number) {
 combine("Max", "Anna");
 combine(21, 3);
 ```
+
+## Literal Type
+
+In addition to the general types `string` and `number`, we can refer to *specific* strings and numbers in type positions.
+
+```typescript
+const constantString = "Hello World";
+// Because `constantString` can only represent 1 possible string, it
+// has a literal type representation
+```
+
+or
+
+```typescript
+const someStrings: "Woo" | "Boo"
+```
