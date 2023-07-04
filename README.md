@@ -89,3 +89,11 @@ Enums can be mixed as string and number enums too.
 ## Any Type
 
 Type `any` can be any value, such as `string`, `boolean`, etc. However, this should be avoided.
+
+## Union Type
+
+Union type helps parameters able to be one of multiple types, denoted by `|`.
+
+```typescript
+
+```
