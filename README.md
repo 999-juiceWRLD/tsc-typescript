@@ -130,3 +130,20 @@ or
 ```typescript
 const someStrings: "Woo" | "Boo"
 ```
+
+## Creating a new type for convenience
+
+Instead of writing, say, `var: string | number`, we can create our new types.
+
+```typescript
+type Combinable = string | number;
+type ConversionDescriptor = "as-number" | "as-text";
+
+function combine(inp1: Combinable, inp2: Combinable) {
+    // .
+    // .
+    // .
+}
+```
+
+We can encode more complex type definitions into our own types.
