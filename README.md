@@ -95,5 +95,22 @@ Type `any` can be any value, such as `string`, `boolean`, etc. However, this sho
 Union type helps parameters able to be one of multiple types, denoted by `|`.
 
 ```typescript
+function combine(inp1: string | number, inp2: string | number) {
+    if ((typeof inp1 === "string") && (typeof inp2 === "string")) {
+        console.log(inp1 + " and " + inp2);
+        return;
+    }
+    else if ((typeof inp1 === "number") && (typeof inp2 === "number")) {
+        console.log(inp1 + inp2);
+        return;
+    }
+    else {
+        console.log("maybe you should try something else.");
+        return;
+    }
+}
 
+
+combine("Max", "Anna");
+combine(21, 3);
 ```
