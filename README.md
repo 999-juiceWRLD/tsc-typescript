@@ -147,3 +147,23 @@ function combine(inp1: Combinable, inp2: Combinable) {
 ```
 
 We can encode more complex type definitions into our own types.
+
+## Defining function types
+
+It's pretty handy to have functions as types, because it encourages stability.
+
+```typescript
+type multType = (fparam: number, sparam: number) => number;
+
+const multResult: multType = (first: number, second: number) => {
+    return first * second;
+}
+
+function printResult(fn: multType, first: number, second: number) {
+    console.log(fn(first, second));
+};
+
+printResult(multResult, 3, 5);
+
+// 15
+```
