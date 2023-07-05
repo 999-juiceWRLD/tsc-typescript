@@ -211,3 +211,11 @@ Inside the `tsconfig.json`, we can add `"exclude: [...]` in order to prevent Typ
 In contrast, there's `"include"` option is the same as `"exclude"` which works the same way. However, if any file not put into `"include"` won't compile.
 
 Another option is `"files"` array, where we can define the **individual** files — can't specify whole folders just like `"include"`.
+
+### Emitting `.js` files elsewhere
+
+When compiling `.ts` files, the TypeScript automatically compiles the files into the same folder where `.ts` files are located.
+
+In the configuration file, set `outDir: "./dist"` to generate `.js` files into `dist/` folder. Note that structuring inside the `src/` folder won't change the situation, it will still compile as the same in `src/` folder.
+
+`rootDir` simply sets compiler to focus on the selected directory. When set to, say, `./src`, if any TypeScript code written besides that folder won't be compiled. Otherwise, TypeScript compile those files too.
