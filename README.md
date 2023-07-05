@@ -189,3 +189,21 @@ In watch mode, even if there is a TypeScript error, it is logged in the terminal
 The presence of a `tsconfig.json` file in a directory indicates that the directory is the root of a TypeScript project. The `tsconfig.json` file specifies the root files and the compiler options required to compile the project.
 
 After `tsc --init`, we can just say `tsc` into the terminal and all the `.ts` files will be compiled. Then, if `tsc --watch` or `tsc -w` entered, the TypeScript will automatically follow every file.
+
+### Excluding a file from compilation process
+
+Inside the `tsconfig.json`, we can add `"exclude: [...]` in order to prevent TypeScript to compile added files:
+
+```typescript
+{
+    "compilerOptions": {
+        // .
+        // .
+        // .
+    },
+    "exclude": [
+        "node_modules",
+        "iDontWantThisFile"
+    ]
+}
+```
