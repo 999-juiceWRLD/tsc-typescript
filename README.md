@@ -269,3 +269,17 @@ class Department {
     private readonly employees: string[] = [];
 }
 ```
+
+### Inheritance
+
+Inheriting classes using `extends` keywords, and `super()` constructor method.
+
+```typescript
+class ITDepartment extends Department {
+    public admins: string[];
+    constructor(name: string, admins: string[]) {
+        super(name);
+        this.admins = admins;
+    }
+}
+```
