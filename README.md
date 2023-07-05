@@ -219,3 +219,31 @@ When compiling `.ts` files, the TypeScript automatically compiles the files into
 In the configuration file, set `outDir: "./dist"` to generate `.js` files into `dist/` folder. Note that structuring inside the `src/` folder won't change the situation, it will still compile as the same in `src/` folder.
 
 `rootDir` simply sets compiler to focus on the selected directory. When set to, say, `./src`, if any TypeScript code written besides that folder won't be compiled. Otherwise, TypeScript compile those files too.
+
+## Classes and Interfaces
+
+This part has strong ties with OOP. A simple class declaration would be:
+
+```typescript
+class Department {
+    public name: string;
+    private employees: string[] = []; // also methods can be private
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    describe(this: Department) {
+        console.log("The department is " + this.name);
+    }
+
+    addEmployee(employee: string) {
+        this.employees.push(employee);
+    }
+
+    printEmployeeInformation() {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    }
+}
+```
