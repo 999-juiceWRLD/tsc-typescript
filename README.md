@@ -247,3 +247,25 @@ class Department {
     }
 }
 ```
+
+### Readonly
+
+`readonly` modifier prevents assignments to the field outside of the constructor.
+
+```typescript
+class Greeter {
+  readonly name: string = "hey";
+    // .
+    // .
+    // .
+}
+```
+
+or
+
+```typescript
+class Department {
+    public readonly name: string;
+    private readonly employees: string[] = [];
+}
+```
