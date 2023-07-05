@@ -207,3 +207,7 @@ Inside the `tsconfig.json`, we can add `"exclude: [...]` in order to prevent Typ
     ]
 }
 ```
+
+In contrast, there's `"include"` option is the same as `"exclude"` which works the same way. However, if any file not put into `"include"` won't compile.
+
+Another option is `"files"` array, where we can define the **individual** files — can't specify whole folders just like `"include"`.
