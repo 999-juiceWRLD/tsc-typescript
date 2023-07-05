@@ -171,3 +171,19 @@ printResult(multResult, 3, 5);
 ```
 
 ## 2. Part
+
+### Watch Mode
+
+When working with a single TypeScript file, we repeatedly compile the file using tsc command. We can use watch mode to automatically compile the file on change.
+
+`tsc app.ts --watch`
+
+or
+
+`tsc app.ts -w`
+
+In watch mode, even if there is a TypeScript error, it is logged in the terminal. Correcting the error will again recompile the output JavaScript file.
+
+### Compiling the entire project / multiple files
+
+The presence of a `tsconfig.json` file in a directory indicates that the directory is the root of a TypeScript project. The `tsconfig.json` file specifies the root files and the compiler options required to compile the project.
