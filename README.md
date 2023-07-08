@@ -283,3 +283,49 @@ class ITDepartment extends Department {
     }
 }
 ```
+
+### `protected` modifier
+
+When a member is marked private, it cannot be accessed from outside of its containing class.
+
+The **protected** modifier acts much like the **private** modifier with the exception that members declared **protected** can also be accessed within deriving classes.
+
+### `get` and `set` properties
+
+These are simply used to have getter and setter methods.
+
+```typescript
+class AccountingDepartment extends Department {    
+    private reports: string[] = [];
+    private lastReport: string;
+    constructor(name: string, lastReport: string | never[]) {
+        super(name);
+        this.lastReport = lastReport[0];
+    }
+    get mostRecentReport() {
+        if (this.lastReport) {
+            return this.lastReport;
+        }
+        throw new Error("lastReport not found");
+    }
+    set mostRecentReport(value: string) {
+        if (!value) {
+            throw new Error("no such thing in set prop");
+        }
+        this.addReport(value);
+    }
+    //.
+    //.
+    //.
+}
+```
+
+and to call these methods:
+
+```typescript
+// get
+console.log(accountDep.mostRecentReport);
+// set
+let text: string = "this is the last report";
+accountDep.mostRecentReport = text;
+```
