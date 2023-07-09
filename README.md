@@ -329,3 +329,42 @@ console.log(accountDep.mostRecentReport);
 let text: string = "this is the last report";
 accountDep.mostRecentReport = text;
 ```
+
+## Static method
+
+As like in other programming languages, `static` keyword in TypeScript let's users to be able to static variable or method accesible.
+
+## Abstract classes
+
+An abstract class is a class that cannot be instantiated on its own. Abstract classes are typically used to define the structure and behavior of a group of related classes.
+
+Declaration of an abstract class is like: `abstract class Department { ... }`. Also, we can define an abstract method of this abstract class, however, we should re-create that method in each class that inherits this abstract class. An abstract method can be declared as:
+
+```typescript
+abstract class Department {
+    static fiscalYear: number = 2023;
+    public name: string;
+    private employees: string[] = []; // also methods can be private
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    abstract returnSomething(this: Department): void;
+    //.
+    //.
+    //.
+}
+
+class ITDepartment extends Department {
+    //.
+    //.
+    //.
+    returnSomething() {
+        return this.admins;
+    }
+}
+
+```
+
+`string | string[]` may be passed instead of `void`.
