@@ -451,3 +451,34 @@ class Person implements Greetable {
     }
 }
 ```
+
+### Interfaces as function types
+
+Below code would work both ways.
+
+```typescript
+// type AddFn = (a: number, b: number) => number;
+
+interface AddFn {
+    (f: number, s: number): number;
+}
+
+let add: AddFn;
+
+add = (num1: number, num2: number) {
+    return num1 + num2;
+}
+```
+
+### Optional parameters
+
+To simply declare optional parameters in interfaces, `?` is used.
+
+```typescript
+interface Show {
+    showName: string;
+    showTime?: number;
+
+    saySmth?(): void;
+}
+```
