@@ -489,11 +489,11 @@ interface Show {
 
 This part's concepts are:
 
-    - intersection types
-    - type guards
-    - discriminated unions
-    - type casting
-    - function overloads
+- intersection types
+- type guards
+- discriminated unions
+- type casting
+- function overloads
 
 ### Intersection types
 
