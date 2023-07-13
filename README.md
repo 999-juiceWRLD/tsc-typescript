@@ -482,3 +482,52 @@ interface Show {
     saySmth?(): void;
 }
 ```
+
+## 3. Part
+
+### Advanced typing concepts
+
+This part's concepts are:
+    - intersection types
+    - type guards
+    - discriminated unions
+    - type casting
+    - function overloads
+
+### Intersection types
+
+Intersection type simply let's a variable which combined by more than one types to have a type which exists on all of the specified types.
+
+```typescript
+type Admin = {
+    name: string;
+    privileges: string[];
+}
+
+type Employee = {
+    name: string;
+    startDate: Date;
+}
+
+type ElevatedEmployee = Admin & Employee;
+```
+
+`interface` may be used instead of `type`, therefore
+
+```typescript
+// type ElevatedEmployee = Admin & Employee;
+interface ElevatedEmployee = Admin & Employee;
+```
+
+```typescript
+type Combinable = string | number;
+type Numeric = number | boolean;
+
+type Universal = Combinable & Numeric;
+
+// type Universal can only be number!
+
+let universal1: Universal = 0;
+let universal2: Universal = "hey"; // error
+let universal3: Universal = false; // error
+```
