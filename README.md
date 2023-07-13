@@ -368,3 +368,86 @@ class ITDepartment extends Department {
 ```
 
 `string | string[]` may be passed instead of `void`.
+
+### Interfaces
+
+To put it simple, an interface describes the structure of an object — or describes how the object should look like — . In TypeScript, an interface just contains the definition of methods and properties, not their implementation. It is the functionality of the class that carries out the connection between the interface by providing the connection with all the parameters of the interface.
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+
+    greet(phrase: string): void; // we don't have to add parameters
+}
+```
+
+and
+
+```typescript
+let user: Person = {
+    name: "dude",
+    age: 21,
+    greet(phrase: string) {
+        console.log(phrase + " i'm " + this.name);
+    }
+}
+```
+
+A class can implement one, also more than one interfaces.
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+
+    greet(phrase: string): void;
+}
+
+interface Animal {
+    species: string;
+}
+
+// implementing class...
+
+class PersonClass implements Person, Animal {
+    name: string;
+    age: number;
+
+    species: string;
+
+    constructor(name: string, age: number, species: string) {
+        this.name = name;
+        this.age = age;
+        this.species = species;
+    }
+
+    greet(phrase: string): void {
+        throw new Error("Method not implemented.");
+    }
+
+}
+```
+
+### Extending interfaces
+
+```typescript
+interface Named {
+    readonly name: string
+}
+
+interface Greetable extends Named {
+    greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+    greet(phrase: string): void {
+        // ... 
+    }
+    name: string;
+    
+    constructor(n: string) {
+        this.name = n;
+    }
+}
+```
