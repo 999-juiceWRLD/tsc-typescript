@@ -488,6 +488,7 @@ interface Show {
 ### Advanced typing concepts
 
 This part's concepts are:
+
     - intersection types
     - type guards
     - discriminated unions
