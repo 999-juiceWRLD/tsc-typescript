@@ -548,3 +548,57 @@ function identity<Type>(arg: Type): Type {
 We’ve now added a type variable `Type` to the identity function. This `Type` allows us to capture the type the user provides (e.g. `number`), so that we can use that information later. Here, we use `Type` again as the return type.
 
 In TypeScript, we can build both generic functions and generic classes.
+
+### Generic functions
+
+Let's say we want to have a `merge` function where it merges to objects:
+
+```typescript
+function merge(objA: object, objB: object) {
+    return Object.assign(objA, objB);
+}
+
+console.log(merge({name: "some random dude"}, {age: 21}));
+
+// output:
+// {name: 'some random dude', age: 21}
+```
+
+This works, however, if we wanted to store this in a variable and then access the `name` object:
+
+```typescript
+const mergedObj = merge({name: "some random dude"}, {age: 21});
+mergedObj.name;
+
+// Property 'name' does not exist on type 'object'.
+```
+
+This is because type `object` is a highly unspecified object, and we can handle this issue by using generics:
+
+```typescript
+function merge<S extends object, T extends object>(objA: S, objB: T) {
+    return Object.assign(objA, objB);
+}
+
+const mergedObj = merge({name: "jackson"}, {age: 19});
+console.log(mergedObj.name); // no error
+```
+
+and even (it's the same):
+
+```typescript
+function merge<T extends object, U extends object>(objA: T, objB: U): T & U {
+    return Object.assign(objA, objB);
+}
+```
+
+Also, we can add more elements (technically, unspecified objects).
+
+```typescript
+// no error
+
+const newMerge = merge<{name: string, hobbies: string[]}, {age: number}>(
+    {name: "my name", hobbies: ["write code", "read political history books", "lot's of hacking!"]}, 
+    {age: 19}
+)
+```
