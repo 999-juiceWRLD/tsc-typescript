@@ -617,3 +617,76 @@ let x = { a: 1, b: 2, c: 3, d: 4 };
 const returnedProperty = getProperty(x, "a");
 console.log(returnedProperty);
 ```
+
+### Generic classes
+
+TypeScript supports generic classes. The generic type parameter is specified in angle brackets after the name of the class. A generic class can have generic fields (member variables) or methods.
+
+An example:
+
+```typescript
+class DataStorage<T> {
+    private data: T[] = [];
+
+    constructor() {
+
+    }
+
+    addItem(item: T | T[]) {
+        if (Array.isArray(item)) {
+            this.data = this.data.concat(item);
+        } else {
+            this.data.push(item);
+        }
+        
+    }
+
+    removeItem(item: T) {
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+
+    get getItems() {
+        return [...this.data];
+    }
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem("ankaraunifedaisi");
+console.log(textStorage.getItems);
+textStorage.addItem(["bro", "dad", "mom", "sister"]);
+console.log(textStorage.getItems);
+
+//
+
+const numberStorage = new DataStorage<number>();
+numberStorage.addItem(1);
+numberStorage.addItem([1, 3, 5, 7, 9]);
+console.log(numberStorage.getItems);
+
+// 
+
+const objectStorage = new DataStorage<object>();
+objectStorage.addItem({name: "random dude", age: 19});
+console.log(objectStorage.getItems);
+objectStorage.addItem([
+    {life: "is good"},
+    {rommel: "desert fox"}
+])
+console.log(objectStorage.getItems);
+```
+
+This code works until we try to remove an object from the `objectStorage`. It doesn't give error but code doesn't work properly, because object is a reference type in TypeScript.
+
+One way to achieve this is to restrain `T` to be only work for primitives.
+
+```typescript
+class DataStorage<T extends string | number> {
+    private data: T[] = [];
+
+    constructor() {
+
+    }
+
+    // ...
+}
+```
