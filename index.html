@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="transpiled/app.ts" defer></script>
+    <link rel="stylesheet" href="./app.css">
+    <script type="module" src="transpiled/app.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <template id="project-input">
+        <form action="">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" id="title" />
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea id="description"  rows="3"></textarea>
+            </div>
+            <div class="form-controll">
+                <label for="title">People</label>
+                <input type="number" id="people" step="1" min="0" max="10"/>
+            </div>
+            <button type="submit">ADD PROJECT</button>
+        </form>
+    </template>
 </body>
 </html>
