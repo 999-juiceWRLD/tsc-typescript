@@ -532,3 +532,19 @@ let universal1: Universal = 0;
 let universal2: Universal = "hey"; // error
 let universal3: Universal = false; // error
 ```
+
+## 4. Part
+
+### Generics
+
+Generics in programming, simply provides flexibility to code. We need a way of capturing the type of the argument in such a way that we can also use it to denote what is being returned. Here, we will use a *type variable*, a special kind of variable that works on types rather than values.
+
+```typescript
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+```
+
+We’ve now added a type variable `Type` to the identity function. This `Type` allows us to capture the type the user provides (e.g. `number`), so that we can use that information later. Here, we use `Type` again as the return type.
+
+In TypeScript, we can build both generic functions and generic classes.
