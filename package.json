@@ -1,0 +1,24 @@
+{
+  "name": "drag-drop",
+  "version": "1.0.0",
+  "description": "In this branch, I will put the simple drag & drop project of Maximillian Schwarzmüller.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/999-juiceWRLD/tsc-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/999-juiceWRLD/tsc-typescript/issues"
+  },
+  "homepage": "https://github.com/999-juiceWRLD/tsc-typescript#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
