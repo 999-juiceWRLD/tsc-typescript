@@ -690,3 +690,17 @@ class DataStorage<T extends string | number> {
     // ...
 }
 ```
+
+### Generic utility types
+
+TypeScript provides several utility types to facilitate common type transformations. These utilities are available globally.
+
+To be updated.
+
+## 5. Part
+
+### Decorators
+
+Decorators use the form `@expression`, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+
+To be continued.
