@@ -598,7 +598,22 @@ Also, we can add more elements (technically, unspecified objects).
 // no error
 
 const newMerge = merge<{name: string, hobbies: string[]}, {age: number}>(
-    {name: "my name", hobbies: ["write code", "read political history books", "lot's of hacking!"]}, 
+    {name: "my name", hobbies: ["write code", "read political history books", 
+                                "lot's of hacking!"]}, 
     {age: 19}
 )
+```
+
+### Using type parameters in generic constraints
+
+You can declare a type parameter that is constrained by another type parameter. For example, here we’d like to get a property from an object given its name. We’d like to ensure that we’re not accidentally grabbing a property that does not exist on the obj, so we’ll place a constraint between the two types:
+
+```typescript
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  return obj[key];
+}
+ 
+let x = { a: 1, b: 2, c: 3, d: 4 };
+const returnedProperty = getProperty(x, "a");
+console.log(returnedProperty);
 ```
