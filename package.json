@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "In this branch, I will put the simple drag & drop project of Maximillian Schwarzmüller.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/999-juiceWRLD/tsc-typescript#readme",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "typescript": "^5.1.6"
   }
 }
