@@ -116,9 +116,11 @@
   
   .droppable {
     background: #ffe3ee;
+    transition: 0.5s all;
   }
   
   #finished-projects .droppable {
+    transition: 0.5s all;
     background: #d6e1ff;
   }
   
