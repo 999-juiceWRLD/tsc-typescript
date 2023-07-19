@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "In this branch, I will put the simple drag & drop project of Maximillian Schwarzmüller.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "lite-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,12 @@
   "homepage": "https://github.com/999-juiceWRLD/tsc-typescript#readme",
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "typescript": "^5.1.6"
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
