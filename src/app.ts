@@ -1,11 +1,6 @@
-import { greet } from "./helper.js";
-import Component from "./components/base-component.js";
-import autobind from "./decorator/autobind.js";
-import ProjectItem from "./components/project-item.js";
-import ProjectInput from "./components/project-input.js";
-import { ProjectState, Listener, State, ProjectStatus } from "./state/project-state.js";
-import ProjectList from "./components/project-list.js";
-import { validate } from "./utils/validation.js";
+import { greet } from "./helper";
+import ProjectInput from "./components/project-input";
+import ProjectList from "./components/project-list";
 
 greet();
 

@@ -1,4 +1,4 @@
-import { Project } from "../utils/project.js";
+import { Project } from "../utils/project";
 
 // Project state management
 
